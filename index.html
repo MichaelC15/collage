@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom right, #f7cac9, #ffb6b9);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .collage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+        }
+
+        .collage.active {
+            opacity: 1;
+        }
+
+        .message {
+            position: absolute;
+            bottom: 60px; /* Ajustado para espacio del botón */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .start-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+        .start-button {
+            padding: 10px 20px;
+            font-size: 20px;
+            color: #fff;
+            background-color: #f7cac9;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .start-button:hover {
+            background-color: #ffb6b9;
+        }
+
+        .start-image {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .start-message {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .control-buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+
+        .control-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .control-button:hover {
+            background-color: #555;
+        }
+    </style>
+    <title>Recuerdo de Turri para Mishara</title>
+</head>
+<body>
+    <div class="start-screen" id="start-screen">
+        <div class="start-message">Mishara... esto es para que veas que no he parado de pensar en ti en las 26 horas del dia.<br>
+            Te extraño un monton de aqui hasta el ∞ y mas allá. &lt;/3.<br> Aquí comienza el viaje de recuerdos</div>
+        <img src="images/start.jpg" class="start-image" alt="Start Image">
+        <button class="start-button" id="start-button">Click y Empecemos</button>
+    </div>
+
+    <img src="images/image0.jpg" class="collage active" alt="Image 0">
+    <img src="images/image1.jpg" class="collage" alt="Image 1">
+    <img src="images/image2.jpeg" class="collage" alt="Image 2">
+    <img src="images/image3.jpeg" class="collage" alt="Image 3">
+    <img src="images/image4.png" class="collage" alt="Image 4">
+    <img src="images/image5.png" class="collage" alt="Image 5">
+    <img src="images/image6.jpg" class="collage" alt="Image 6">
+    <img src="images/image7.png" class="collage" alt="Image 7">
+    <img src="images/image8.jpeg" class="collage" alt="Image 8">
+    <img src="images/image9.jpg" class="collage" alt="Image 9">
+    <img src="images/image10.jpg" class="collage" alt="Image 10">
+    <img src="images/image11.jpg" class="collage" alt="Image 11">
+    <img src="images/image12.jpg" class="collage" alt="Image 12">
+    <img src="images/image13.jpg" class="collage" alt="Image 13">
+    <img src="images/image14.jpg" class="collage" alt="Image 14">
+    <img src="images/image15.jpg" class="collage" alt="Image 15">
+    <img src="images/image16.jpeg" class="collage" alt="Image 16">
+    <img src="images/image17.jpg" class="collage" alt="Image 17">
+    <img src="images/image18.jpg" class="collage" alt="Image 18">
+    <img src="images/image19.jpg" class="collage" alt="Image 19">
+    <img src="images/image20.jpg" class="collage" alt="Image 20">
+    <img src="images/image21.jpg" class="collage" alt="Image 21">
+    <img src="images/image22.jpg" class="collage" alt="Image 22">
+    <img src="images/image23.jpg" class="collage" alt="Image 23">
+    <img src="images/image24.jpg" class="collage" alt="Image 24">
+    <img src="images/image25.jpeg" class="collage" alt="Image 25">
+    <img src="images/image26.jpg" class="collage" alt="Image 26">
+    <img src="images/image27.jpg" class="collage" alt="Image 27">
+    <img src="images/image28.jpg" class="collage" alt="Image 28">
+    <img src="images/image29.jpeg" class="collage" alt="Image 29">
+    <img src="images/image30.jpeg" class="collage" alt="Image 30">
+    <img src="images/image31.jpg" class="collage" alt="Image 31">
+    <img src="images/image32.jpg" class="collage" alt="Image 32">
+    <img src="images/image33.jpg" class="collage" alt="Image 33">
+    <img src="images/image34.jpg" class="collage" alt="Image 34">
+    <img src="images/image35.jpeg" class="collage" alt="Image 35">
+    <img src="images/image36.jpg" class="collage" alt="Image 36">
+    <img src="images/image37.jpeg" class="collage" alt="Image 37">
+    <img src="images/image38.jpg" class="collage" alt="Image 38">
+    <img src="images/image39.jpg" class="collage" alt="Image 39">
+    <img src="images/image40.jpg" class="collage" alt="Image 40">
+    <img src="images/image41.png" class="collage" alt="Image 41">
+    <img src="images/image42.jpg" class="collage" alt="Image 42">
+    <img src="images/image43.jpg" class="collage" alt="Image 43">
+
+    <div class="message" id="message" style="display: none;">
+        La luna está hermosa hoy ¿No lo crees?
+    </div>
+
+    <div class="control-buttons" id="control-buttons" style="display: none;">
+        <button class="control-button" id="stop-button">Detener</button>
+        <button class="control-button" id="resume-button">Seguir</button>
+    </div>
+
+    <!-- Agrega el elemento de audio -->
+    <audio id="background-music" src="images/Audio.mp3" loop></audio>
+
+    <script>
+        const images = document.querySelectorAll('.collage');
+        const messages = [
+            'La luna está hermosa hoy ¿No lo crees? ;)','Esto es un recuerdo </3', 'de imagenes de', 'momentos que pasamos,', 'momentos que compartiste conmigo',
+            'o fotos que me mandaste ', 'escogi los que marcaron', 'un momento lindo', 'en todo nuestro tiempo',
+            'de relación,espero te guste mucho', 'cada imagen representa', 'algo para los 2, aunqueee', 'admito que seran mas fotos tuyas',
+            'como esta, que te vez muy bien xd <3', 'de lunita que tienes que cuidarla.', 'Deja de hacerte tantos piercing jaja', 'Solo dire que palta...',
+            'Como te digo veras lindos momentos', 'miralos cuanto quieras', 'recuerda cada uno de ellos..', 'que bebita tan linda',
+            'se siempre tú, sonrie siempre', 'ERES MUY PRECIOSA <3', 'XD me gusto mucho eso ', 'gracias por enseñarme eso, cada cuanto me lo pongo',
+            'extrañare las noches de peliculas :(', 'lamentablemente ya no habra más', 'ahora si ya no creces(tiernos tus piecitos)', 'Cada foto tuya me encanta mucho',
+            'videollamada, lindo momento', 'inolvidable....', 'duerme bien, que aca tienes ojeritas', 'ame todo de ti de tu lado mas tierno al mas perverso',
+            'se nos perdio nuestro hijito </3', '<3 como olvidar>', 'cuando tomabamos como en la foto', 'hubiera querido hacerlo de nuevo',
+            'fondo fondo fondo ', 'espero ese dia haberte alegrado mucho con eso.', 'Feliz Cumpleaños de aqui hasta tu ultimo Panchita', 'Espero aun lo tengas y no lo botes, gracias por ponerle eso',
+            'avankin life, momentazo contigo ', 'Te extrañare un monton, ojala no estuviera pasando </3... y', 'nuestro matrimonio, aca si lo logramos mi amor, te amo conejita.BYE'
+        ];
+        let currentIndex = 0;
+        let intervalId;
+        const messageElement = document.getElementById('message');
+        const startScreen = document.getElementById('start-screen');
+        const controlButtons = document.getElementById('control-buttons');
+        const backgroundMusic = document.getElementById('background-music');
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+            messageElement.innerHTML = messages[currentIndex];
+            messageElement.style.display = 'block';
+
+            if (currentIndex === images.length - 1) {
+                // La última imagen dura 5 segundos
+                setTimeout(() => {
+                    clearInterval(intervalId);
+                    messageElement.style.display = 'none';
+                    startScreen.style.display = 'flex';
+                    controlButtons.style.display = 'none';
+                    backgroundMusic.pause(); // Detiene la música al final
+                }, 6000);
+            }
+        }
+
+        function startSlideshow() {
+            intervalId = setInterval(showNextImage, 4000); // Cambia la imagen cada 4 segundos
+            controlButtons.style.display = 'flex';
+            backgroundMusic.play(); // Inicia la música
+        }
+
+        document.getElementById('start-button').addEventListener('click', () => {
+            startScreen.style.display = 'none';
+            messageElement.style.display = 'block';
+            startSlideshow();
+        });
+
+        document.getElementById('stop-button').addEventListener('click', () => {
+            clearInterval(intervalId);
+            intervalId = null;
+            backgroundMusic.pause(); // Detiene la música
+        });
+
+        document.getElementById('resume-button').addEventListener('click', () => {
+            if (!intervalId) {
+                startSlideshow();
+                backgroundMusic.play(); // Reanuda la música
+            }
+        });
+    </script>
+</body>
+</html>
